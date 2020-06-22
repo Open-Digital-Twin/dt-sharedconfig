@@ -27,16 +27,18 @@ CREATE TABLE IF NOT EXISTS element (
   name text,
   created_at timestamp,
   parent UUID,
-  PRIMARY KEY (id)
+  PRIMARY KEY (id, twin)
 );
+CREATE INDEX ON element(twin);
 
 CREATE TABLE IF NOT EXISTS source (
   id UUID,
   name text,
   element UUID,
   created_at timestamp,
-  PRIMARY KEY (id)
+  PRIMARY KEY (id, element)
 );
+CREATE INDEX ON source(element);
 
 CREATE TABLE IF NOT EXISTS source_data (
   source UUID,
