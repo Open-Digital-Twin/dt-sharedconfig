@@ -3,8 +3,7 @@
 ## DB Commands
 
 ### Init DB
-docker exec -it scylla-db cqlsh -f /db/db.cql
-docker exec -it scylla-db cqlsh -f /db/init.cql 
+docker exec -it scylla-db cqlsh -f /db/db.cql -f /db/init.cql
 
 #### Source data count by source.
 
